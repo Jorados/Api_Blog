@@ -11,9 +11,11 @@ spring:
         one-indexed-parameters: true
 
   profiles:
-    active: local
+    active: test
+
 
   jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: create
     properties:
@@ -26,3 +28,4 @@ spring:
 
 logging.level:
   org.hibernate.SQL: debug
+# org.hibernate.type: trace
