@@ -20,7 +20,6 @@ public class PostRepositoryImpl implements PostRepositoryCustom {
 
     @Override
     public List<Post> getList(PostSearch postSearch) {
-
         return queryFactory
                 .selectFrom(post)
                 .limit(postSearch.getSize())

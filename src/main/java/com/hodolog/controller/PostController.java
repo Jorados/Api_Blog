@@ -1,24 +1,16 @@
 package com.hodolog.controller;
 
-import com.hodolog.domain.Post;
 import com.hodolog.request.PostCreate;
 import com.hodolog.request.PostEdit;
 import com.hodolog.request.PostSearch;
 import com.hodolog.response.PostResponse;
 import com.hodolog.service.PostService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @Slf4j
@@ -33,6 +25,7 @@ public class PostController {
 
     @PostMapping("/posts")
     public void post(@RequestBody @Valid PostCreate request) throws Exception {
+        request.validate();
         postService.write(request);
     }
 
@@ -53,5 +46,10 @@ public class PostController {
     @PatchMapping("/posts/{postId}")
     public void edit(@PathVariable Long postId, @RequestBody @Valid PostEdit request) {
         postService.edit(postId, request);
+    }
+
+    @DeleteMapping("/posts/{postId}")
+    public void delete(@PathVariable Long postId) {
+        postService.delete(postId);
     }
 }

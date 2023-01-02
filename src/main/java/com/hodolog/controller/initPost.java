@@ -2,7 +2,6 @@ package com.hodolog.controller;
 
 
 import com.hodolog.domain.Post;
-import com.hodolog.domain.PostEditor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -32,17 +31,14 @@ public class initPost {
 
         @Transactional
         public void init(){
-            Post post1 = Post.builder()
-                    .title("제목1")
-                    .content("내용1")
-                    .build();
-            em.persist(post1);
+            for(int i=0; i<20; i++) {
+                Post post = Post.builder()
+                        .title("제목" + i)
+                        .content("내용" + i)
+                        .build();
+                em.persist(post);
+            }
 
-            Post post2 = Post.builder()
-                    .title("제목2")
-                    .content("내용2")
-                    .build();
-            em.persist(post2);
         }
     }
 }

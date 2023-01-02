@@ -3,8 +3,6 @@ package com.hodolog.response;
 import com.hodolog.domain.Post;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 /**
  * 서비스 정책에 맞는 클래스
