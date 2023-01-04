@@ -1,4 +1,4 @@
-= 호돌로그 API
+= 성진로그 API
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs

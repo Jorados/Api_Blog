@@ -1,4 +1,4 @@
-package com.hodolog;
+package com.hodolog.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.context.annotation.Bean;

@@ -77,8 +77,8 @@ public class PostControllerDocTest {
     void test2() throws Exception {
         //given
         PostCreate request = PostCreate.builder()
-                .title("호돌맨")
-                .content("반포자이")
+                .title("제목")
+                .content("내용 입니다.")
                 .build();
 
         String json = objectMapper.writeValueAsString(request);
